@@ -1,0 +1,34 @@
+\documentclass[11pt]{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{titling}
+\usepackage{geometry}
+\geometry{a4paper, margin=1in}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb, mathtools}
+\usepackage{physics, braket}
+\numberwithin{equation}{section}
+\AtBeginDocument{\Large\selectfont}
+\title{Notes for Path Integral Quantization}
+\author{YILUN LIN}
+\date{June 2025}
+
+\begin{document}
+
+\maketitle
+
+\section{Principle of Path Integral}
+\textbf{Canonical Quantization vs. Path Integral Quantization:}
+\begin{enumerate}
+    \item Canonical quantization relies on commutation relations and operator
+    formalism.
+    \item Path integral quantization achieves second quantization by expressing quantum amplitudes as a sum over histories.
+\end{enumerate}
+\textbf{Basic Idea of Path Integral:}\\
+For a scalar particle (i.e. a $spin=0$ particle) in quantum mechanics:
+\begin{equation}
+    \langle x_f,t_f\mid x_i,t_i\rangle\,=\,\int\!\mathcal{D}x(t)e^{i\mathcal S[x]/\hbar},
+\end{equation}
+where $\mathcal Dx(t)$ denotes all possible paths and $\mathcal S[x]$ is just the classical action. Actually, this is exactly the core difference between quantum mechanics and quantum field theory. Quantum mechanics can describe motion of one-particle states in the non-relativistic limit by using wavefunction $\lvert\psi\rangle$ and only the classical action. While when it comes to multi-particle states in relativistic situation, in order to cancel the effects of disconnected diagrams arising in the process of second quantization, we need to take the logarithm of the path integral and derive the effective action using the Legendre transform. And this is what people always do in the quantum field theory formalism.\\[0.5em]
+\textbf{From Mechanics to Field Theory:}\\
+The involvement of special relativity theory implies that particles in the space can be created and annihilated.
+\end{document}

@@ -5,7 +5,7 @@
 \geometry{a4paper, margin=1in}
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath, amssymb, mathtools}
-\usepackage{physics, braket}
+\usepackage{physics, braket, slashed}
 \numberwithin{equation}{section}
 \AtBeginDocument{\Large\selectfont}
 \title{Notes for Path Integral Quantization}
@@ -44,6 +44,69 @@ Functional derivatives of $\mathcal{Z}[J]$ yield time-ordered correlation functi
 For convergence, we often perform a Wick rotation $t\rightarrow -i\tau$ to yield a Euclidean path integral:
 \begin{equation}
     \mathcal{Z}[J]\,=\,\int\!\mathcal{D}\phi\,e^{-\mathcal{S}_{E}[\phi]+\int\!d^4x\,J(\Vec{x})\phi(\Vec{x})}.
+\end{equation}
+
+\section{Path Integral Quantization of Klein-Gordon Fields}
+The Lagrangian for a real scalar field is
+\begin{equation}
+    \mathcal{L}\,=\,\frac{1}{2}\partial_\mu\phi\,\partial^\mu\phi-\frac{1}{2}m^2\phi^2,
+\end{equation}
+thus the action is
+\begin{equation}
+    \mathcal{S}[\phi]\,=\,\int\!d^4x[\frac{1}{2}(\partial_\mu\phi)^2-\frac{1}{2}m^2\phi^2].
+\end{equation}
+The generating functional with source $J(\Vec{x})$ is
+\begin{equation}
+    \mathcal{Z}[J]\,=\,\int\!\mathcal{D}\phi\,e^{i\int\!d^4x\,\left[\frac{1}{2}\phi(\Box+m^2)\phi\,+\,J(\Vec{x})\phi\right]},
+\end{equation}
+which can be computed exactly since it is a Gaussian functional integral.
+In order to solve this Gaussian integral, we consider to complete the square:
+\begin{equation}
+    \phi(\Vec{x})\,=\,\phi_c(\Vec{x})\,+\,\phi_q(\Vec{x}),
+\end{equation}
+where
+\begin{equation}
+    \phi_c(\Vec{x})\,=\,-\int\!d^4x'\,\Delta_F(\Vec{x}-\Vec{x'})J(\Vec{x'}).
+\end{equation}
+Therefore,
+\begin{equation}
+    \mathcal{Z}[J]\,=\,\mathcal{Z}[0]\,e^{-\frac{i}{2}\int\!d^4x\,d^4x'J(\Vec{x})\Delta_F(\Vec{x}-\Vec{x'})J(\Vec{x'})}.
+\end{equation}
+Here $\Delta_F(\Vec{x}-\Vec{x'})$ is the Feynman propagator which satisfies
+\begin{equation}
+    (\Box\,+m^2)\,\Delta_F(\Vec{x}-\Vec{x'})\,=\,-i\delta^4(\Vec{x}-\Vec{x'}).
+\end{equation}
+
+\section{Path Integral Quantization of Dirac Field}
+The Lagrangian for a free spinor field is
+\begin{equation}
+    \mathcal{L}\,=\,\bar\psi(i\gamma^\mu\partial_\mu-m)\psi
+\end{equation}
+and the action is
+\begin{equation}
+    \mathcal{S}[\bar\psi,\psi]\,=\,\int\!d^4x\,\bar\psi(i\gamma^\mu\partial_\mu-m)\psi.
+\end{equation}
+The Dirac spinor field is used to describe particles with a spin $\frac{1}{2}$, which are kinds of Fermions. While Fermionic fields are quantized using Grassmann variables, which obey the antisymmetry:
+\begin{equation}
+    \psi_i\psi_j\,=\,-\psi_j\psi_i.
+\end{equation}
+Integration over Grassmann variables is defined by
+\begin{equation}
+    \begin{split}
+        \int\!d\psi\,&=\,0,\\ \int\!d\psi\,\psi\,&=\,1.
+    \end{split}
+\end{equation}
+The generating functional with Grassmann sources $\eta$ and $\bar\eta$ is
+\begin{equation}
+    \mathcal{Z}[\bar\eta,\eta]\,=\,\int\!\mathcal{D}\bar\psi\,\mathcal{D}\psi\,e^{i\int\!d^4x\,[\bar\psi(i\gamma^\mu\partial_\mu-m)\psi\,+\,\bar\eta\psi\,+\,\bar\psi\eta]}.
+\end{equation}
+For a bilinear fermionic action, we have:
+\begin{equation}
+    \mathcal{Z}[\bar\eta,\eta]\,=\,\det(i\slashed{\partial}-m)\,e^{-i\int\!d^4x\,d^4x'\bar\eta(\Vec{x})\,S_F(\Vec{x}-\Vec{x'})\,\eta(\Vec{x'})},
+\end{equation}
+where $S_F(\Vec{x}-\Vec{x'})$ is the Feynman Propagator for the Dirac Field, satisfying
+\begin{equation}
+    (i\slashed{\partial}_x\,-\,m)\,S_F(\Vec{x}-\Vec{x'})\,=\,\delta^4(\Vec{x}-\Vec{x'}).
 \end{equation}
 
 

@@ -30,5 +30,22 @@ For a scalar particle (i.e. a $spin=0$ particle) in quantum mechanics:
 \end{equation}
 where $\mathcal Dx(t)$ denotes all possible paths and $\mathcal S[x]$ is just the classical action. Actually, this is exactly the core difference between quantum mechanics and quantum field theory. Quantum mechanics can describe motion of one-particle states in the non-relativistic limit by using wavefunction $\lvert\psi\rangle$ and only the classical action. While when it comes to multi-particle states in relativistic situation, in order to cancel the effects of disconnected diagrams arising in the process of second quantization, we need to take the logarithm of the path integral and derive the effective action using the Legendre transform. And this is what people always do in the quantum field theory formalism.\\[0.5em]
 \textbf{From Mechanics to Field Theory:}\\
-The involvement of special relativity theory implies that particles in the space can be created and annihilated.
+The involvement of special relativity into quantum theory implies that particles in the space can be created and annihilated since one-particle states could not exist steadily. While traditional quantum mechanics does not include such creation and annihilation of particles, the application of field theory method is essential to establishing a proper theoretical framework.\\
+To transform from traditional quantum mechanics to quantum field theory, coordinates $x(t)$ need to be promoted to fields $\phi(\Vec{x})$, and the sum over paths $\int\!\mathcal Dx(t)$ becomes a functional integral $\int\!\mathcal D\phi(\Vec{x})$.\\
+The central concept in path integral quantization is the generating functional:
+\begin{equation}
+    \mathcal Z[J]\,=\,\int\!\mathcal D\phi\,e^{i\mathcal S[\phi]+i\int\!d^4x\,J(\Vec{x})\phi(\Vec{x})},
+\end{equation}
+where $\mathcal{S}[\phi]$ is the action of the field $\phi(\Vec{x})$ and $J(\Vec{x})$ is an external source.\\
+Functional derivatives of $\mathcal{Z}[J]$ yield time-ordered correlation functions:
+\begin{equation}
+    \langle0\mid\mathcal T\{\phi(\Vec{x_1}),\cdots,\phi(\Vec{x_n})\}\mid0\rangle\,=\,\left.\frac{1}{\mathcal{Z}[0]}\,\frac{\delta^n\mathcal{Z}[J]}{\delta J(\Vec{x_1})\cdots\delta J(\Vec{x_n})}\right|_{J=0}
+\end{equation}
+For convergence, we often perform a Wick rotation $t\rightarrow -i\tau$ to yield a Euclidean path integral:
+\begin{equation}
+    \mathcal{Z}[J]\,=\,\int\!\mathcal{D}\phi\,e^{-\mathcal{S}_{E}[\phi]+\int\!d^4x\,J(\Vec{x})\phi(\Vec{x})}.
+\end{equation}
+
+
+
 \end{document}
